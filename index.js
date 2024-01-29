@@ -11,13 +11,18 @@ searchInputEl.addEventListener("keyup", e => {
     if (e.key == "Enter" && word) {
         fetchApi(word);
     }
+}); 
+document.querySelector('.fa-search').addEventListener('click', e => {
+    let word = e.target.previousElementSibling.value; 
+    if (word) {
+        fetchApi(word)
+    }
 });
 
 function fetchApi(word) {
     containerEl.classList.remove("active");
     infoTextEl.style.color = "black";
-    infoTextEl.innerHTML = `Searching the meaning of <span>"${word}"</span>`;
-    // Link to get this api : https://dictionaryapi.dev/
+    infoTextEl.innerHTML = `Searching the meaning of <span>"${word}"</span>`; 
     let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
     try {
@@ -58,11 +63,12 @@ volumeEl.addEventListener("click", () => {
     }, 800);
 });
 
-//for remove icon which is available in input field
+
+
 removeIcon.addEventListener("click", () => {
     searchInputEl.value = "";
     searchInputEl.focus();
     containerEl.classList.remove("active");
     infoTextEl.style.color = "black";
-    infoTextEl.innerHTML = "Type a word & click 'ENTER' to get the results.";
+    infoTextEl.innerHTML = "Type a word & click 'ENTER' to search.";
 });

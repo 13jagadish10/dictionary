@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
+#body {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,10 +23,11 @@ a {
 
 .container {
   width: 420px;
+  max-width: 95%;
   border-radius: 7px;
   background: white;
   padding: 25px 28px 45px;
-  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.842) inset;
 }
 
 .container h1 {
@@ -65,8 +66,9 @@ a {
 
 .search i {
   left: 18px;
-  pointer-events: none;
-  font-size: 16px;
+  /* pointer-events: none; */
+  font-size: 16px; 
+  cursor: pointer;
 }
 
 .search input:focus ~ i,
@@ -173,4 +175,20 @@ ul .content::-webkit-scrollbar {
 
 .content .synonyms span {
   margin-right: 5px;
+}
+footer{ 
+  background-color: rgb(49, 0, 0);
+  color: rgb(150, 150, 150);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  flex-wrap: wrap;
+}
+footer div{
+  text-align: center;
+
+}
+code{
+  color: white; 
 }
